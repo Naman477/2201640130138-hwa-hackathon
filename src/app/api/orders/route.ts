@@ -72,7 +72,7 @@ export async function POST(request: NextRequest) {
         city: shippingDetails.city.trim(),
         state: shippingDetails.state || '',
         postalCode: shippingDetails.postalCode.trim(),
-        country: shippingDetails.country || 'United States',
+        country: shippingDetails.country || 'India',
         deliveryNotes: shippingDetails.deliveryNotes || '',
       },
       items: items.map((item: OrderItemSummary) => ({

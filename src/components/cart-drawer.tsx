@@ -84,7 +84,7 @@ export function CartDrawer() {
                     </div>
                   </div>
                   <p className="font-medium text-brand-700 text-sm w-16 text-right">
-                    ${(item.price * item.quantity).toFixed(2)}
+                    ₹{(item.price * item.quantity).toFixed(2)}
                   </p>
                 </div>
               ))}
@@ -96,26 +96,26 @@ export function CartDrawer() {
           <div className="space-y-3 mb-8">
             <div className="flex justify-between text-sm">
               <span className="text-brand-600">Subtotal</span>
-              <span className="font-serif font-bold text-brand-900">${subtotal.toFixed(2)}</span>
+              <span className="font-serif font-bold text-brand-900">₹{subtotal.toFixed(2)}</span>
             </div>
             <div className="flex justify-between text-xs text-brand-500">
-              <span>Tax (estimated)</span>
-              <span>${tax.toFixed(2)}</span>
+              <span>GST (5% estimated)</span>
+              <span>₹{tax.toFixed(2)}</span>
             </div>
             <div className="flex justify-between text-xs text-brand-500">
               <span>Shipping</span>
-              <span>$0.00</span>
+              <span className="text-emerald-700 font-bold uppercase tracking-wider text-[11px]">FREE</span>
             </div>
             <div className="flex justify-between pt-3 border-t border-brand-200 text-lg font-serif font-bold text-brand-900">
               <span>Total</span>
-              <span>${total.toFixed(2)}</span>
+              <span>₹{total.toFixed(2)}</span>
             </div>
           </div>
 
           <div className="flex items-center gap-2.5 mb-6 px-3 py-3 rounded-2xl border border-amber-100 bg-amber-50">
             <Truck className="w-4 h-4 text-amber-600" />
             <span className="text-xs font-medium text-amber-800">
-              Free shipping on all orders
+              Free Pan-India Delivery (Bluedart / Delhivery)
             </span>
           </div>
 

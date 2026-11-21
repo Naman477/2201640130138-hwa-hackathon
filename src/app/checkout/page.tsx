@@ -39,18 +39,18 @@ interface FormData {
 }
 
 const EMPTY_FORM: FormData = {
-  dogName: '',
-  dogBreed: '',
-  fullName: '',
-  email: '',
-  phone: '',
-  address: '',
-  apartment: '',
-  city: '',
-  state: '',
-  postalCode: '',
-  country: 'US',
-  deliveryNotes: '',
+  dogName: 'Sheru',
+  dogBreed: 'Indie / Desi Dog',
+  fullName: 'Arjun Mehta',
+  email: 'arjun@example.com',
+  phone: '+91 98765 43210',
+  address: 'Flat 402, Palm Meadows, Whitefield',
+  apartment: 'Tower B',
+  city: 'Bengaluru',
+  state: 'Karnataka',
+  postalCode: '560066',
+  country: 'India',
+  deliveryNotes: 'Please leave with society security gate',
 };
 
 export default function Checkout() {
@@ -364,19 +364,19 @@ export default function Checkout() {
                 <div className="space-y-4">
                   <div className="flex justify-between text-sm">
                     <span className="text-brand-600">Subtotal</span>
-                    <span className="font-serif font-bold text-brand-900">${subtotal.toFixed(2)}</span>
+                    <span className="font-serif font-bold text-brand-900">₹{subtotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-xs text-brand-500">
                     <span>Shipping</span>
-                    <span>$0.00</span>
+                    <span className="text-emerald-700 font-bold uppercase tracking-wider text-[11px]">FREE (Pan-India)</span>
                   </div>
                   <div className="flex justify-between text-xs text-brand-500">
-                    <span>Tax (estimated)</span>
-                    <span>${tax.toFixed(2)}</span>
+                    <span>GST (5% estimated)</span>
+                    <span>₹{tax.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between pt-3 border-t border-brand-200 text-2xl font-serif font-bold text-brand-900">
                     <span>Total</span>
-                    <span>${total.toFixed(2)}</span>
+                    <span>₹{total.toFixed(2)}</span>
                   </div>
                 </div>
                 <button

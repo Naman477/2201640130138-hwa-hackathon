@@ -1,12 +1,22 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Shield, Sparkles, Volume2, Wind, RefreshCw, CheckCircle2, ChevronRight, Award } from 'lucide-react';
+import Link from 'next/link';
+import {
+  Volume2,
+  Wind,
+  Shield,
+  CheckCircle2,
+  ChevronRight,
+  Award,
+  Sparkles,
+  RefreshCw,
+  Dog,
+  Play,
+} from 'lucide-react';
 import { playChimeCue } from '@/lib/audio';
-import { useCart } from '@/lib/cartStore';
 
 export function Hero() {
-  const { openCart } = useCart();
   const [chimePlaying, setChimePlaying] = useState(false);
   const [activeTab, setActiveTab] = useState<'micro-dose' | 'puzzle' | 'scents'>('micro-dose');
 
@@ -16,13 +26,8 @@ export function Hero() {
     setTimeout(() => setChimePlaying(false), 2000);
   };
 
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <section id="hero" className="relative overflow-hidden pt-8 pb-20 md:py-24 bg-gradient-to-b from-brand-50 via-brand-100/50 to-brand-50">
+    <section id="hero" className="relative overflow-hidden pt-8 pb-20 md:py-24 bg-gradient-to-b from-brand-50 via-brand-100/50 to-brand-50 border-b border-brand-200">
       {/* Decorative ambient background glows */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[850px] h-[400px] bg-gradient-to-br from-amber-200/30 via-sage-200/20 to-transparent blur-3xl pointer-events-none -z-10 rounded-full" />
       <div className="absolute -top-24 right-10 w-96 h-96 bg-brand-200/40 rounded-full blur-2xl pointer-events-none -z-10" />
@@ -34,7 +39,7 @@ export function Hero() {
             {/* High-Impact Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sage-100 border border-sage-300 text-sage-900 text-xs sm:text-sm font-semibold shadow-sm">
               <Award className="w-4 h-4 text-sage-700" />
-              <span>Veterinary Behavioralist Recommended Foraging Tech</span>
+              <span>Veterinary Behavioralist Recommended Pet Tech</span>
               <span className="w-1.5 h-1.5 rounded-full bg-sage-500 animate-pulse" />
             </div>
 
@@ -52,7 +57,7 @@ export function Hero() {
             {/* Core Problem & Mechanism Statement */}
             <p className="text-lg sm:text-xl text-brand-800 leading-relaxed font-normal">
               Standard puzzle toys are solved in <span className="font-semibold text-brand-950">3 minutes</span>.
-              Treat cameras dump food and trigger frantic barking. Ball launchers ruin joints.
+              Treat cameras dump food and cause frantic barking. Ball launchers ruin joints.
               <br className="hidden sm:inline" />
               <strong className="text-brand-950 font-bold"> ScentLoop™</strong> is an autonomous system that drops
               randomized 1–2 kibble micro-doses into <span className="underline decoration-sage-500">physically shifting chew-proof puzzles</span> paired
@@ -82,29 +87,29 @@ export function Hero() {
               <div className="flex items-start gap-2.5 text-sm text-brand-900 font-medium">
                 <CheckCircle2 className="w-5 h-5 text-sage-600 shrink-0 mt-0.5" />
                 <span>
-                  <strong>Chew-Proof Weighted Base:</strong> Low CG (8.5 lbs) + suction rings. Zero subscriptions.
+                  <strong>Chew-Proof Weighted Base:</strong> Low CG (4.2 kg) + suction rings. Zero subscriptions.
                 </span>
               </div>
             </div>
 
             {/* CTA Group */}
             <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-              <button
-                onClick={() => scrollTo('configurator')}
-                className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-brand-900 via-brand-800 to-forest-950 text-white px-8 py-4 rounded-2xl font-extrabold text-base sm:text-lg shadow-xl shadow-brand-900/20 hover:shadow-2xl hover:from-black hover:to-forest-900 transition-all transform active:scale-[0.98] group"
+              <Link
+                href="/configurator"
+                className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-brand-900 via-brand-800 to-forest-950 text-white px-8 py-4 rounded-2xl font-extrabold text-base sm:text-lg shadow-xl shadow-brand-900/20 hover:shadow-2xl hover:from-black hover:to-forest-900 transition-all transform active:scale-[0.98] group text-center"
               >
-                <span>Customize Your ScentLoop™</span>
+                <span>Build Your ScentLoop™</span>
                 <span className="text-amber-400 font-normal">|</span>
-                <span className="text-amber-300 font-bold">$189</span>
+                <span className="text-amber-300 font-bold">₹4,999</span>
                 <ChevronRight className="w-5 h-5 text-amber-400 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </Link>
 
-              <button
-                onClick={() => scrollTo('timeline')}
-                className="inline-flex items-center justify-center gap-2 bg-brand-100 hover:bg-brand-200/90 text-brand-950 border border-brand-300 px-6 py-4 rounded-2xl font-bold text-base transition-all shadow-sm active:scale-95"
+              <a
+                href="#calibrator"
+                className="inline-flex items-center justify-center gap-2 bg-brand-100 hover:bg-brand-200/90 text-brand-950 border border-brand-300 px-6 py-4 rounded-2xl font-bold text-base transition-all shadow-sm active:scale-95 text-center"
               >
-                <span>See the 8-Hour Cycle</span>
-              </button>
+                <span>Breed Calibrator</span>
+              </a>
             </div>
 
             {/* Social Proof & Guarantees Bar */}
@@ -112,7 +117,7 @@ export function Hero() {
               <div className="flex items-center gap-1.5">
                 <div className="flex text-amber-500 text-sm">★★★★★</div>
                 <span className="font-bold text-brand-950">4.92 / 5</span>
-                <span>(1,480+ Solved Sessions)</span>
+                <span>(1,480+ Indian Pet Parents)</span>
               </div>
               <div className="flex items-center gap-1">
                 <Shield className="w-4 h-4 text-sage-600" />
@@ -120,7 +125,7 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-1">
                 <Sparkles className="w-4 h-4 text-amber-600" />
-                <span>Dishwasher Safe Food-Grade Parts</span>
+                <span>Free Pan-India Delivery</span>
               </div>
             </div>
           </div>

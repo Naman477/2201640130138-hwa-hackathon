@@ -2,104 +2,104 @@ export const DOG_SIZES: Record<string, import('@/lib/types').DogSizeOption> = {
   small: {
     id: 'small',
     name: 'Small / Gentle',
-    weightRange: 'Under 25 lb',
-    chewStrength: 'Light chewer',
+    weightRange: 'Under 12 kg (Indie Pup, Shih Tzu, Beagle, Frenchie)',
+    chewStrength: 'Light to moderate chewer',
     description:
-      'Smaller modules with softer rubber and lighter springs, sized for petite pups and gentle nibblers.',
-    material: 'Soft natural rubber + BPA-free nylon',
-    price: 129,
-    badge: 'Best for puppies',
+      'Smaller food-grade rubber modules with lighter spring resistance, calibrated for apartment pets and gentle foragers.',
+    material: 'Soft natural vulcanized rubber + BPA-free nylon',
+    price: 4999,
+    badge: 'Best for Small Breeds',
   },
   medium: {
     id: 'medium',
     name: 'Medium / Standard',
-    weightRange: '25–60 lb',
-    chewStrength: 'Average chewer',
+    weightRange: '12–28 kg (Adult Indie, Golden Retriever, Cocker Spaniel)',
+    chewStrength: 'Standard chewer',
     description:
-      'Balanced resistance across all four puzzle modules — the everyday workday companion.',
-    material: 'Durable natural rubber + reinforced nylon',
-    price: 149,
-    badge: 'Most popular',
+      'Balanced dual-stage resistance across all 4 puzzle modules — the ideal companion for Indian workday routines.',
+    material: 'Durable vulcanized natural rubber + reinforced nylon',
+    price: 5499,
+    badge: 'Most Popular across India',
   },
   large: {
     id: 'large',
     name: 'Large / Power Chewer',
-    weightRange: 'Over 60 lb',
-    chewStrength: 'Aggressive chewer',
+    weightRange: 'Over 28 kg (Labrador, German Shepherd, Rottweiler)',
+    chewStrength: 'Aggressive / heavy chewer',
     description:
-      'Heavy-duty nylon modules, reinforced locking mechanisms, and a thicker weighted base.',
-    material: 'Extra-tough chew-proof nylon + steel-reinforced base',
-    price: 179,
-    badge: 'Built to last',
+      'Ballistic DuPont™ Zytel nylon armored modules, reinforced locking pins, and extra-weighted 4.2 kg cast base.',
+    material: 'Extra-tough chew-proof ballistic nylon + steel-weighted base',
+    price: 5999,
+    badge: 'Chew-Proof Warranty',
   },
 };
 
 export const COLORWAYS: Record<string, import('@/lib/types').ColorwayOption> = {
   sage: {
     id: 'sage',
-    name: 'Sage',
+    name: 'Kerala Sage',
     hex: '#5b8765',
-    description: 'Soft green that blends into any room.',
+    description: 'Calming botanical green that complements modern Indian apartment aesthetics.',
   },
   sandstone: {
     id: 'sandstone',
-    name: 'Sandstone',
+    name: 'Jaipur Sandstone',
     hex: '#bc946a',
-    description: 'Warm neutral tone for modern homes.',
+    description: 'Warm terracotta-cream tone inspired by heritage sandstone architecture.',
   },
   forest: {
     id: 'forest',
-    name: 'Forest',
+    name: 'Nilgiri Forest',
     hex: '#1b3826',
-    description: 'Deep woodland green, hides scuffs best.',
+    description: 'Deep woodland green with copper accents that gracefully masks dust and scuffs.',
   },
 };
 
 export const ADD_ONS: import('@/lib/types').AddOn[] = [
   {
     id: 'scent-pack',
-    name: 'Scent Refill Pack',
-    tagline: '3 extra natural scent cartridges',
-    price: 24,
-    originalPrice: 30,
+    name: 'Natural Botanic & Game Scent Refill Pack',
+    tagline: '3 refill cartridges (Wild Duck, Meadow Thyme & Chamomile)',
+    price: 699,
+    originalPrice: 999,
     category: 'scents',
     description:
-      'Dried herb and game scents (rabbit, duck, sage, mint) that cycle airflow during active windows.',
+      '100% natural dried culinary herbs and wild game essence that gently cycle airflow during active sessions to trigger olfactory exhaustion.',
     iconName: 'Droplet',
     popular: true,
   },
   {
     id: 'module-pack',
-    name: 'Puzzle Module Pack',
-    tagline: 'All four interchangeable modules',
-    price: 48,
-    originalPrice: 60,
+    name: 'Interchangeable 4-Module Expansion Kit',
+    tagline: 'Slide-bolt, rotating dial, wobble chamber & snuffle tray',
+    price: 1299,
+    originalPrice: 1799,
     category: 'hardware',
     description:
-      'Slide-bolt, rotating dial, weighted wobble chamber, and scent-snuffle tray — rotate lock-states every session.',
+      'Full backup set of all 4 chew-proof modules so you can wash one set in the dishwasher while the other stays in rotation.',
     iconName: 'Settings',
   },
   {
     id: 'treat-pack',
-    name: 'Dehydrated Treat Starter Pack',
-    tagline: '3 bags of single-ingredient treats',
-    price: 18,
-    originalPrice: 24,
+    name: 'Single-Ingredient Freeze-Dried Training Morsels (200g)',
+    tagline: 'Wild Buff & Himalayan Trout crunch cubes',
+    price: 599,
+    originalPrice: 799,
     category: 'treats',
-    description: 'Chicken, salmon, and beef treats sized for the micro-release carousel.',
+    description:
+      'High-protein, grain-free micro-cubes precisely sized at 8mm for zero-jam automated dispensing across workday cycles.',
     iconName: 'Bone',
   },
 ];
 
-export const SHIPPING_COST = 0;
-export const TAX_RATE = 0.08;
+export const SHIPPING_COST = 0; // Free Pan-India Delivery on all ScentLoop kits
+export const TAX_RATE = 0.05; // 5% GST
 
 export const NAV_LINKS = [
-  { href: '/', label: 'Home' },
-  { href: '/configurator', label: 'Configure' },
-  { href: '/#how-it-works', label: 'How It Works' },
+  { href: '/#calibrator', label: 'Breed Calibrator' },
+  { href: '/#how-it-works', label: '8-Hr Cycle' },
   { href: '/#hardware', label: 'Hardware' },
-  { href: '/#comparison', label: 'Comparison' },
-  { href: '/#faq', label: 'FAQ' },
+  { href: '/#comparison', label: 'Why ScentLoop' },
   { href: '/#reviews', label: 'Reviews' },
+  { href: '/#faq', label: 'FAQ' },
 ];

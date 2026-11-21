@@ -25,13 +25,13 @@ export default function OrderPage({ searchParams }: OrderPageProps) {
         <div className="bg-white p-10 rounded-3xl border border-brand-100 shadow-sm mb-12">
           <div className="flex items-center justify-between mb-8 px-4">
             <span className="text-sm font-semibold text-brand-700 uppercase tracking-wider">Order total</span>
-            <span className="text-[2rem] font-serif font-bold text-brand-900">${total.toFixed(2)}</span>
+            <span className="text-[2rem] font-serif font-bold text-brand-900">₹{total.toFixed(2)}</span>
           </div>
           <div className="grid grid-cols-2 gap-6 text-left px-4">
-            <StatRow label="Status" value="Confirmed" color="text-brand-900" />
-            <StatRow label="Shipping" value="Free" color="text-sage-600" />
-            <StatRow label="Est. delivery" value="3–5 business days" color="text-brand-700" />
-            <StatRow label="Tracking" value="Emailed on ship" color="text-brand-700" />
+            <StatRow label="Status" value="Confirmed & Stored" color="text-brand-900" />
+            <StatRow label="Shipping" value="Free Pan-India Delivery" color="text-sage-600" />
+            <StatRow label="Est. delivery" value="3–4 business days" color="text-brand-700" />
+            <StatRow label="Tracking" value="SMS & Email updates" color="text-brand-700" />
           </div>
           <div className="mt-10 pt-8 border-t border-brand-100 flex items-center gap-3 text-sm text-brand-600 justify-center">
             <Mail className="w-4 h-4" />

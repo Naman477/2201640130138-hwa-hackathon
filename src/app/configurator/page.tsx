@@ -158,6 +158,9 @@ function SizeStep({
                 <Icon className="w-7 h-7" />
               </div>
               <span className="font-serif font-bold text-lg">{size.name}</span>
+              <span className="font-mono font-bold text-base text-amber-700 bg-amber-50 px-3 py-0.5 rounded-full border border-amber-200">
+                ₹{size.price}
+              </span>
               <span className="text-xs font-medium tracking-wide uppercase text-brand-500 group-hover:text-brand-900 transition-colors">
                 {size.weightRange}
               </span>
@@ -297,14 +300,14 @@ function AddOnsStep({
                       {addOn.tagline}
                     </p>
                   </div>
-                  <span className="font-serif font-bold text-brand-900">${addOn.price}</span>
+                  <span className="font-serif font-bold text-brand-900">₹{addOn.price}</span>
                 </div>
                 <p className="text-[13px] text-brand-600 leading-relaxed">
                   {addOn.description}
                 </p>
                 {addOn.originalPrice > addOn.price && (
                   <p className="text-[11px] text-brand-400 mt-1 line-through">
-                    Was ${addOn.originalPrice}
+                    Was ₹{addOn.originalPrice}
                   </p>
                 )}
               </div>
@@ -393,7 +396,7 @@ function SummaryStep({
                       <p className="font-medium text-brand-900 text-sm">{a.name}</p>
                       <p className="text-[12px] text-brand-500">{a.tagline}</p>
                     </div>
-                    <span className="font-serif font-bold text-brand-700">${a.price}</span>
+                    <span className="font-serif font-bold text-brand-700">₹{a.price}</span>
                   </li>
                 ))}
               </ul>
@@ -405,7 +408,7 @@ function SummaryStep({
           <div className="p-8 rounded-3xl border border-brand-200 bg-gradient-deep text-white shadow-premium sticky top-24">
             <h3 className="font-serif font-bold text-brand-200 mb-6 tracking-wide">Order total</h3>
             <div className="text-[3rem] font-serif font-bold text-white mb-8">
-              ${subtotal.toFixed(2)}
+              ₹{subtotal.toFixed(2)}
             </div>
             <button
               onClick={onAddToCart}

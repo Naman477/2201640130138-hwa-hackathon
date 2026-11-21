@@ -50,17 +50,24 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
+            <Link
+              href="/configurator"
+              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-brand-900 text-white font-bold text-xs shadow-sm hover:bg-brand-800 transition-all active:scale-95"
+            >
+              <span>Build Kit</span>
+              <span className="text-amber-400">|</span>
+              <span className="text-amber-300 font-mono">₹4,999</span>
+            </Link>
+
             <button
               onClick={() => setIsOpen(true)}
               className="relative p-2.5 text-brand-600 hover:text-brand-900 transition-colors group"
+              aria-label="Open Cart"
             >
               <ShoppingCart className="w-5 h-5" />
               {itemCount > 0 && (
                 <span className="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-amber-500 ring-2 ring-brand-50 group-hover:ring-brand-600"></span>
               )}
-            </button>
-            <button className="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-full border border-brand-200 bg-white/80 backdrop-blur text-brand-700 text-xs font-semibold hover:bg-brand-50 hover:border-brand-300 transition-all shadow-soft">
-              <Mail className="w-3 h-3" />
             </button>
           </div>
         </div>
