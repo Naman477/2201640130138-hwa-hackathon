@@ -33,7 +33,7 @@ export interface AddOn {
 }
 
 export interface CartItem {
-  id?: string;
+  id: string;
   type: 'main_unit' | 'addon';
   name: string;
   price: number;

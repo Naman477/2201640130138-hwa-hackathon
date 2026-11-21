@@ -14,6 +14,9 @@ interface CartContextType {
   subtotal: number;
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
+  openCart: () => void;
+  closeCart: () => void;
+  isCartOpen: boolean;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -82,7 +85,22 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ items, addItem, updateQuantity, removeItem, clear, itemCount, subtotal, isOpen, setIsOpen }}>
+    <CartContext.Provider
+      value={{
+        items,
+        addItem,
+        updateQuantity,
+        removeItem,
+        clear,
+        itemCount,
+        subtotal,
+        isOpen,
+        setIsOpen,
+        openCart: () => setIsOpen(true),
+        closeCart: () => setIsOpen(false),
+        isCartOpen: isOpen,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
@@ -97,6 +115,7 @@ export function useCart() {
 export function buildMainUnitItem(dogSize: DogSize, colorway: Colorway): CartItem {
   const size = DOG_SIZES[dogSize];
   return {
+    id: `scentloop-${dogSize}-${colorway}`,
     type: 'main_unit',
     name: `ScentLoop™ Base Unit — ${size.name}`,
     price: size.price,
@@ -109,6 +128,7 @@ export function buildMainUnitItem(dogSize: DogSize, colorway: Colorway): CartIte
 
 export function buildAddOnItem(addOn: AddOn): CartItem {
   return {
+    id: addOn.id,
     type: 'addon',
     name: addOn.name,
     price: addOn.price,

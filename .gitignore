@@ -10,3 +10,4 @@ hwa-start.*
 dist/
 .next/
 __pycache__/
+*.tsbuildinfo
