@@ -1,0 +1,74 @@
+const ROWS = [
+  {
+    feature: 'Time a dog stays engaged',
+    scentloop: 'All day (8 hr)',
+    puzzle: '~3 min',
+    camera: '~15 min',
+  },
+  {
+    feature: 'Treat portion control',
+    scentloop: '1–2 pieces per release',
+    puzzle: 'All at once',
+    camera: 'Easy to overfeed',
+  },
+  {
+    feature: 'Novelty wears off',
+    scentloop: 'Rotating lock‑states',
+    puzzle: 'Solved once, done',
+    camera: 'Dog ignores it',
+  },
+  {
+    feature: 'Mental fatigue',
+    scentloop: 'Olfactory + mechanical',
+    puzzle: 'Mechanical only',
+    camera: 'Visual only',
+  },
+  {
+    feature: 'Camera / app subscription',
+    scentloop: 'None',
+    puzzle: 'None',
+    camera: 'Monthly fee',
+  },
+  {
+    feature: 'Chew‑proof construction',
+    scentloop: 'Yes',
+    puzzle: 'Often no',
+    camera: 'No',
+  },
+];
+
+export function ComparisonTable() {
+  return (
+    <section id="comparison" className="py-20 border-b border-brand-200 bg-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-serif font-bold text-brand-900 mb-4">Not just another puzzle toy</h2>
+          <p className="text-brand-600 max-w-2xl mx-auto">How ScentLoop compares to standard options.</p>
+        </div>
+
+        <div className="overflow-x-auto border rounded-2xl border-brand-200">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-brand-50 border-b border-brand-200">
+                <th className="p-4 font-bold text-brand-900">Feature</th>
+                <th className="p-4 font-bold text-brand-900 bg-brand-100 border-b border-brand-200">ScentLoop™</th>
+                <th className="p-4 font-bold text-brand-900">Standard puzzle toy</th>
+                <th className="p-4 font-bold text-brand-900">Treat camera</th>
+              </tr>
+            </thead>
+            <tbody>
+              {ROWS.map((row) => (
+                <tr key={row.feature} className="border-b border-brand-100 hover:bg-brand-50 transition-colors">
+                  <td className="p-4 font-medium text-brand-700">{row.feature}</td>
+                  <td className="p-4 text-brand-900 font-medium">{row.scentloop}</td>
+                  <td className="p-4 text-brand-600">{row.puzzle}</td>
+                  <td className="p-4 text-brand-600">{row.camera}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  );
+}
